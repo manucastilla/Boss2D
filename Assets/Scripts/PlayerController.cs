@@ -8,19 +8,29 @@ public class PlayerController : MonoBehaviour
     public float jumpSpeed = 9;
     public Rigidbody2D rb;
     public bool ground;
+    public Vector3 StartPosition;
     // Start is called before the first frame update
     void Start()
     {
         ground = true;
+        StartPosition = transform.position;
+
         
         
+    }
+
+    void FixedUpdate(){
+        //transform.Translate(Vector2.right * (Time.deltaTime * speed));
+        transform.localPosition += new Vector3 (speed, 0, 0);
     }
    
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector2.right * (Time.deltaTime * speed));
+        
+        
+        
 
         if(Input.GetButton("Jump")){
             if(ground){
@@ -51,6 +61,13 @@ public class PlayerController : MonoBehaviour
             ground = true;
             
         }
+        if (col.gameObject.tag == "Spike"){
+            Respawn();
+        }
 
+    }
+
+    public void Respawn() {
+        transform.position = StartPosition;
     }
 }
