@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    public AudioClip jumpSFX;
     public float speed = 0.2f;
     public float jumpSpeed = 6;
     public Rigidbody2D rb;
@@ -32,11 +34,20 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(transform.position.x);
+        Debug.Log(camera1.transform.position.x);
+        if (transform.position.x - 10 > camera1.transform.position.x)
+        {
+            Debug.Log("x");
+            GameOver();
+        }
 
-        if (this.transform.position.x - 100 < camera1.transform.position.x)
+
+        if (rb.transform.position.y < -0.5)
         {
             Debug.Log("oie");
-            // GameOver();
+            // Debug.Log(this.transform.position.x);
+            GameOver();
         }
 
         if (Input.GetButton("Jump"))
@@ -44,10 +55,16 @@ public class PlayerController : MonoBehaviour
             if (ground)
             {
                 jump();
+                AudioManager.PlaySFX(jumpSFX);
             }
 
         }
 
+    }
+
+    public void GameOver()
+    {
+        SceneManager.LoadScene("EndMenu");
     }
 
     protected void jump()

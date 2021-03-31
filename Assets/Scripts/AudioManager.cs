@@ -2,7 +2,6 @@
 
 public class AudioManager : MonoBehaviour
 {
-
     [SerializeField]
     private AudioSource sfxSource = default;
     [SerializeField]
@@ -10,6 +9,17 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     private AudioClip music = default;
     private static AudioManager _instance;
+
+    void Awake()
+    {
+        _instance = this;
+        if (music)
+        {
+            ambienceSource.loop = true;
+            ambienceSource.clip = music;
+            ambienceSource.Play();
+        }
+    }
 
     public static void PlaySFX(AudioClip audioClip)
     {
@@ -20,15 +30,5 @@ public class AudioManager : MonoBehaviour
         _instance.ambienceSource.Stop();
         _instance.ambienceSource.clip = audioClip;
         _instance.ambienceSource.Play();
-    }
-    void Awake()
-    {
-        _instance = this;
-        if (music)
-        {
-            ambienceSource.loop = true;
-            ambienceSource.clip = music;
-            ambienceSource.Play();
-        }
     }
 }
