@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class PlatformGenerator : MonoBehaviour
 {
-    public GameObject platform;
     public Transform generationPoint;
-    public float distance;
+    private float distance;
     private float widthPlatform;
 
     public float distanceMin;
