@@ -13,14 +13,14 @@ public class PlayerController : MonoBehaviour
     public bool ground;
     public Vector3 StartPosition;
     public Camera camera1;
-    // Start is called before the first frame update
+
+    public float fallMultiplier = 2.5f;
+    public float lowJumpMultiplier = 2f;
+
     void Start()
     {
         ground = true;
         StartPosition = transform.position;
-
-
-
     }
 
     void FixedUpdate()
@@ -34,9 +34,9 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(transform.position.x);
-        Debug.Log(camera1.transform.position.x);
-        if (transform.position.x - 10 > camera1.transform.position.x)
+        // Debug.Log(transform.position.x);
+        // Debug.Log(camera1.transform.position.x);
+        if (transform.position.x + 10 < camera1.transform.position.x)
         {
             Debug.Log("x");
             GameOver();
@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
 
         if (rb.transform.position.y < -0.5)
         {
-            Debug.Log("oie");
+
             // Debug.Log(this.transform.position.x);
             GameOver();
         }
@@ -70,9 +70,9 @@ public class PlayerController : MonoBehaviour
     protected void jump()
     {
         // rb.velocity = Vector2.up * jumpSpeed;
-        rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
+        rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+        // rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
 
-        //gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, 0.3f), ForceMode2D.Impulse);
     }
 
     private void OnCollisionExit2D(Collision2D col)
