@@ -14,13 +14,18 @@ public class PlayerController : MonoBehaviour
     public Vector3 StartPosition;
     public Camera camera1;
 
-    public float fallMultiplier = 2.5f;
-    public float lowJumpMultiplier = 2f;
+    float JumpVelocity;
+    float JumpDampening=0.1f; 
 
     void Start()
     {
         ground = true;
         StartPosition = transform.position;
+
+        GameObject music = GameObject.FindGameObjectWithTag("Music");
+         if (music){
+        GameObject.FindGameObjectWithTag("Music").GetComponent<Music>().PlayMusic();
+         }
     }
 
     void FixedUpdate()
@@ -28,6 +33,21 @@ public class PlayerController : MonoBehaviour
         //transform.Translate(Vector2.right * (Time.deltaTime * speed));
         transform.localPosition += new Vector3(speed, 0, 0);
         camera1.transform.localPosition += new Vector3(speed, 0, 0);
+
+        Vector3 pos = transform.position;
+         
+         if (JumpVelocity != 0)
+         {
+             pos.y += JumpVelocity;
+             JumpVelocity -= JumpDampening;
+             if (JumpVelocity <= 0)
+             {
+                 rb.gravityScale = 5.0f;
+                 JumpVelocity = 0;
+             }
+         }
+ 
+         transform.position = pos;
     }
 
 
@@ -67,12 +87,10 @@ public class PlayerController : MonoBehaviour
         SceneManager.LoadScene("EndMenu");
     }
 
-    protected void jump()
+    public void jump()
     {
-        // rb.velocity = Vector2.up * jumpSpeed;
-        rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
-        // rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
-
+        JumpVelocity = 0.6f;    
+         rb.gravityScale = 0.0f;
     }
 
     private void OnCollisionExit2D(Collision2D col)
@@ -95,13 +113,10 @@ public class PlayerController : MonoBehaviour
         }
         if (col.gameObject.tag == "Spike")
         {
-            Respawn();
+            GameOver();
         }
 
     }
 
-    public void Respawn()
-    {
-        transform.position = StartPosition;
-    }
+   
 }
