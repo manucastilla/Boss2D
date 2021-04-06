@@ -13,19 +13,22 @@ public class PlayerController : MonoBehaviour
     public bool ground;
     public Vector3 StartPosition;
     public Camera camera1;
+    GameManager gm;
 
     float JumpVelocity;
-    float JumpDampening=0.1f; 
+    float JumpDampening = 0.1f;
 
     void Start()
     {
         ground = true;
         StartPosition = transform.position;
+        gm = GameManager.GetInstance();
 
         GameObject music = GameObject.FindGameObjectWithTag("Music");
-         if (music){
-        GameObject.FindGameObjectWithTag("Music").GetComponent<Music>().PlayMusic();
-         }
+        if (music)
+        {
+            GameObject.FindGameObjectWithTag("Music").GetComponent<Music>().PlayMusic();
+        }
     }
 
     void FixedUpdate()
@@ -35,19 +38,19 @@ public class PlayerController : MonoBehaviour
         camera1.transform.localPosition += new Vector3(speed, 0, 0);
 
         Vector3 pos = transform.position;
-         
-         if (JumpVelocity != 0)
-         {
-             pos.y += JumpVelocity;
-             JumpVelocity -= JumpDampening;
-             if (JumpVelocity <= 0)
-             {
-                 rb.gravityScale = 5.0f;
-                 JumpVelocity = 0;
-             }
-         }
- 
-         transform.position = pos;
+
+        if (JumpVelocity != 0)
+        {
+            pos.y += JumpVelocity;
+            JumpVelocity -= JumpDampening;
+            if (JumpVelocity <= 0)
+            {
+                rb.gravityScale = 5.0f;
+                JumpVelocity = 0;
+            }
+        }
+
+        transform.position = pos;
     }
 
 
@@ -89,8 +92,8 @@ public class PlayerController : MonoBehaviour
 
     public void jump()
     {
-        JumpVelocity = 0.6f;    
-         rb.gravityScale = 0.0f;
+        JumpVelocity = 0.6f;
+        rb.gravityScale = 0.0f;
     }
 
     private void OnCollisionExit2D(Collision2D col)
@@ -118,5 +121,14 @@ public class PlayerController : MonoBehaviour
 
     }
 
-   
+    // private void OnTriggerEnter2D(Collider2D col)
+    // {
+    //     if (col.gameObject.CompareTag("Coin"))
+    //     {
+    //         gm.points += 10;
+
+    //     }
+    // }
+
+
 }
