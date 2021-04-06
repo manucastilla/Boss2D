@@ -9,43 +9,45 @@ public class CoinSpawner : MonoBehaviour
 {
     public GameObject coin;
     public float time = 1f;
-
+    public static float timer;
     private Vector3 screenBounds;
+    public GameObject[] objectsToSpawn;
 
     void Start()
     {
+
         if (GameObject.FindWithTag("Infra"))
         {
+            Debug.Log("oie");
             screenBounds = GameObject.FindWithTag("Infra").transform.position;
-            StartCoroutine(coinWave());
+            spawnCoin();
         }
-
     }
 
     void Update()
     {
-        if (GameObject.FindWithTag("Player"))
+        timer += Time.deltaTime;
+        int seconds = Mathf.FloorToInt(timer);
+        if (GameObject.FindWithTag("Infra"))
         {
-            screenBounds = GameObject.FindWithTag("Player").transform.position;
+            screenBounds = GameObject.FindWithTag("Infra").transform.position;
+            if (timer > 3)
+            {
+                Debug.Log("oie");
+                spawnCoin();
+                timer = 0;
+            }
+
         }
 
     }
 
     private void spawnCoin()
     {
-        GameObject x = Instantiate(coin as GameObject);
-
-        x.transform.position = new Vector2(screenBounds.x + 30, Random.Range(1, 4));
+        Instantiate(coin, new Vector2(screenBounds.x + 30, Random.Range(1, 4)), Quaternion.identity);
+        // x.transform.position = new Vector2(screenBounds.x + 30, Random.Range(1, 4));
 
     }
 
-    IEnumerator coinWave()
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(time);
-            spawnCoin();
-        }
-    }
 
 }

@@ -15,7 +15,6 @@ public class Coin : MonoBehaviour
         AudioManager.PlaySFX(coinSFX);
         Destroy(gameObject);
         gm.points += 10;
-        Debug.Log(gm.points);
     }
 
 }

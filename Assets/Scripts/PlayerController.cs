@@ -8,15 +8,20 @@ public class PlayerController : MonoBehaviour
 {
     public AudioClip jumpSFX;
     public float speed = 0.2f;
-    public float jumpSpeed = 6;
+    public float jumpSpeed = 1000;
     public Rigidbody2D rb;
     public bool ground;
     public Vector3 StartPosition;
     public Camera camera1;
+
+    public Transform groundCheck;
+    public float checkRadius;
+
+    public LayerMask groundLayer;
     GameManager gm;
 
     float JumpVelocity;
-    float JumpDampening = 0.1f;
+    // float JumpDampening = 0.1f;
 
     void Start()
     {
@@ -37,43 +42,41 @@ public class PlayerController : MonoBehaviour
         transform.localPosition += new Vector3(speed, 0, 0);
         camera1.transform.localPosition += new Vector3(speed, 0, 0);
 
+        //jump alternativo
         Vector3 pos = transform.position;
 
-        if (JumpVelocity != 0)
-        {
-            pos.y += JumpVelocity;
-            JumpVelocity -= JumpDampening;
-            if (JumpVelocity <= 0)
-            {
-                rb.gravityScale = 5.0f;
-                JumpVelocity = 0;
-            }
-        }
+        // if (JumpVelocity != 0)
+        // {
+        //     pos.y += JumpVelocity;
+        //     JumpVelocity -= JumpDampening;
+        //     if (JumpVelocity <= 0)
+        //     {
+        //         rb.gravityScale = 5.0f;
+        //         JumpVelocity = 0;
+        //     }
+        // }
 
-        transform.position = pos;
+        // transform.position = pos;
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        // Debug.Log(transform.position.x);
-        // Debug.Log(camera1.transform.position.x);
+        ground = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer);
+
         if (transform.position.x + 10 < camera1.transform.position.x)
         {
-            Debug.Log("x");
             GameOver();
         }
 
 
         if (rb.transform.position.y < -0.5)
         {
-
-            // Debug.Log(this.transform.position.x);
             GameOver();
         }
 
-        if (Input.GetButton("Jump"))
+        if (Input.GetKeyDown("space"))
         {
             if (ground)
             {
@@ -92,28 +95,30 @@ public class PlayerController : MonoBehaviour
 
     public void jump()
     {
-        JumpVelocity = 0.6f;
-        rb.gravityScale = 0.0f;
+        // rb.AddForce(Vector3.up * jumpSpeed, ForceMode2D.Force);
+        rb.AddForce(Vector2.up * jumpSpeed);
+        // JumpVelocity = 0.6f;
+        // rb.gravityScale = 0.0f;
     }
 
     private void OnCollisionExit2D(Collision2D col)
     {
-        if (col.gameObject.tag == "Infra")
-        {
-            ground = false;
+        // if (col.gameObject.tag == "Infra")
+        // {
+        //     ground = false;
 
 
-        }
+        // }
 
     }
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag == "Infra")
-        {
-            ground = true;
+        // if (col.gameObject.tag == "Infra")
+        // {
+        //     ground = true;
 
-        }
+        // }
         if (col.gameObject.tag == "Spike")
         {
             GameOver();

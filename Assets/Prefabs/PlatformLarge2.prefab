@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7414175589294879611}
   - component: {fileID: 7414175589294879608}
-  m_Layer: 0
+  - component: {fileID: 305916018}
+  m_Layer: 8
   m_Name: planetRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81,6 +82,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &305916018
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7414175589294879610}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.28, y: 1.28}
+    newSize: {x: 1.28, y: 1.28}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.28, y: 1.28}
+  m_EdgeRadius: 0
 --- !u!1 &7414175589338428242
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,7 +119,7 @@ GameObject:
   - component: {fileID: 7414175589338428243}
   - component: {fileID: 7414175589338428241}
   - component: {fileID: 7414175589338428240}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: planetMid (19)
   m_TagString: Infra
   m_Icon: {fileID: 0}
@@ -200,7 +227,7 @@ GameObject:
   - component: {fileID: 7414175589341274430}
   - component: {fileID: 7414175589341274428}
   - component: {fileID: 7414175589341274431}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: planetMid (18)
   m_TagString: Infra
   m_Icon: {fileID: 0}
@@ -308,7 +335,7 @@ GameObject:
   - component: {fileID: 7414175589589420270}
   - component: {fileID: 7414175589589420268}
   - component: {fileID: 7414175589589420271}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: planetMid (20)
   m_TagString: Infra
   m_Icon: {fileID: 0}
@@ -416,7 +443,7 @@ GameObject:
   - component: {fileID: 7414175589710006749}
   - component: {fileID: 7414175589710006723}
   - component: {fileID: 7414175589710006722}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: planetMid (2)
   m_TagString: Infra
   m_Icon: {fileID: 0}
@@ -524,7 +551,7 @@ GameObject:
   - component: {fileID: 7414175589719068180}
   - component: {fileID: 7414175589719068183}
   - component: {fileID: 7414175589719068182}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlatformLarge2
   m_TagString: Infra
   m_Icon: {fileID: 0}
@@ -538,7 +565,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7414175589719068177}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -68.6, y: -2.821, z: 16.917969}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -574,7 +601,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 5.6493073, y: 0}
+  m_Offset: {x: 5.617628, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -585,7 +612,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 14.847839, y: 1}
+  m_Size: {x: 19.971268, y: 1.2288628}
   m_EdgeRadius: 0
 --- !u!114 &7414175589719068182
 MonoBehaviour:
@@ -611,7 +638,7 @@ GameObject:
   - component: {fileID: 7414175590096791151}
   - component: {fileID: 7414175590096791149}
   - component: {fileID: 7414175590096791148}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: planetMid (16)
   m_TagString: Infra
   m_Icon: {fileID: 0}
@@ -719,7 +746,7 @@ GameObject:
   - component: {fileID: 7414175590237835924}
   - component: {fileID: 7414175590237835930}
   - component: {fileID: 7414175590237835925}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: planetMid
   m_TagString: Infra
   m_Icon: {fileID: 0}
@@ -827,7 +854,7 @@ GameObject:
   - component: {fileID: 7414175590547517723}
   - component: {fileID: 7414175590547517721}
   - component: {fileID: 7414175590547517720}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: planetMid (4)
   m_TagString: Infra
   m_Icon: {fileID: 0}
@@ -935,7 +962,7 @@ GameObject:
   - component: {fileID: 7414175590700548986}
   - component: {fileID: 7414175590700548984}
   - component: {fileID: 7414175590700548987}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: planetMid (1)
   m_TagString: Infra
   m_Icon: {fileID: 0}
@@ -1042,7 +1069,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7414175590764341787}
   - component: {fileID: 7414175590764341784}
-  m_Layer: 0
+  - component: {fileID: 1164622922}
+  m_Layer: 8
   m_Name: planetLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1113,6 +1141,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1164622922
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7414175590764341786}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.28, y: 1.28}
+    newSize: {x: 1.28, y: 1.28}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.28, y: 1.28}
+  m_EdgeRadius: 0
 --- !u!1 &7414175590913498167
 GameObject:
   m_ObjectHideFlags: 0
@@ -1124,7 +1178,7 @@ GameObject:
   - component: {fileID: 7414175590913498164}
   - component: {fileID: 7414175590913498170}
   - component: {fileID: 7414175590913498165}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: planetMid (3)
   m_TagString: Infra
   m_Icon: {fileID: 0}
@@ -1232,7 +1286,7 @@ GameObject:
   - component: {fileID: 7414175590916876557}
   - component: {fileID: 7414175590916876531}
   - component: {fileID: 7414175590916876530}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: planetMid (17)
   m_TagString: Infra
   m_Icon: {fileID: 0}
@@ -1341,6 +1395,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: planetMid (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 2718919558556456750, guid: 2676440d304a46840892fcdaa16d8c4c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4362966550079313754, guid: 2676440d304a46840892fcdaa16d8c4c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 4362966550079313754, guid: 2676440d304a46840892fcdaa16d8c4c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1358,6 +1422,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4362966550079313754, guid: 2676440d304a46840892fcdaa16d8c4c,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4362966550079313754, guid: 2676440d304a46840892fcdaa16d8c4c,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: -0
       objectReference: {fileID: 0}
@@ -1370,16 +1439,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4362966550079313754, guid: 2676440d304a46840892fcdaa16d8c4c,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4362966550079313754, guid: 2676440d304a46840892fcdaa16d8c4c,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4362966550079313754, guid: 2676440d304a46840892fcdaa16d8c4c,
         type: 3}
@@ -1416,6 +1475,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: planetMid (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 2718919558556456750, guid: 2676440d304a46840892fcdaa16d8c4c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4362966550079313754, guid: 2676440d304a46840892fcdaa16d8c4c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 4362966550079313754, guid: 2676440d304a46840892fcdaa16d8c4c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1433,6 +1502,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4362966550079313754, guid: 2676440d304a46840892fcdaa16d8c4c,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4362966550079313754, guid: 2676440d304a46840892fcdaa16d8c4c,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: -0
       objectReference: {fileID: 0}
@@ -1445,16 +1519,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4362966550079313754, guid: 2676440d304a46840892fcdaa16d8c4c,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4362966550079313754, guid: 2676440d304a46840892fcdaa16d8c4c,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4362966550079313754, guid: 2676440d304a46840892fcdaa16d8c4c,
         type: 3}
@@ -1491,6 +1555,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: planetMid (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 2718919558556456750, guid: 2676440d304a46840892fcdaa16d8c4c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4362966550079313754, guid: 2676440d304a46840892fcdaa16d8c4c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 4362966550079313754, guid: 2676440d304a46840892fcdaa16d8c4c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1508,6 +1582,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4362966550079313754, guid: 2676440d304a46840892fcdaa16d8c4c,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4362966550079313754, guid: 2676440d304a46840892fcdaa16d8c4c,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: -0
       objectReference: {fileID: 0}
@@ -1520,16 +1599,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4362966550079313754, guid: 2676440d304a46840892fcdaa16d8c4c,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4362966550079313754, guid: 2676440d304a46840892fcdaa16d8c4c,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 4362966550079313754, guid: 2676440d304a46840892fcdaa16d8c4c,
         type: 3}
@@ -1566,6 +1635,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: planetMid (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 2718919558556456750, guid: 2676440d304a46840892fcdaa16d8c4c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4362966550079313754, guid: 2676440d304a46840892fcdaa16d8c4c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 4362966550079313754, guid: 2676440d304a46840892fcdaa16d8c4c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1583,6 +1662,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4362966550079313754, guid: 2676440d304a46840892fcdaa16d8c4c,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4362966550079313754, guid: 2676440d304a46840892fcdaa16d8c4c,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: -0
       objectReference: {fileID: 0}
@@ -1595,16 +1679,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4362966550079313754, guid: 2676440d304a46840892fcdaa16d8c4c,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4362966550079313754, guid: 2676440d304a46840892fcdaa16d8c4c,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 4362966550079313754, guid: 2676440d304a46840892fcdaa16d8c4c,
         type: 3}
