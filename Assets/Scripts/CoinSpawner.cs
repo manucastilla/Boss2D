@@ -31,7 +31,6 @@ public class CoinSpawner : MonoBehaviour
             screenBounds = GameObject.FindWithTag("Infra").transform.position;
             if (timer > 3)
             {
-                Debug.Log("oie");
                 spawnCoin();
                 timer = 0;
             }

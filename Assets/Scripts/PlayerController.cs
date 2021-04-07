@@ -19,14 +19,16 @@ public class PlayerController : MonoBehaviour
 
     public LayerMask groundLayer;
     GameManager gm;
-
+    float playerPosition;
     float JumpVelocity;
+
     // float JumpDampening = 0.1f;
 
     void Start()
     {
         ground = true;
         StartPosition = transform.position;
+        playerPosition = StartPosition.x - camera1.transform.position.x;
         gm = GameManager.GetInstance();
 
         GameObject music = GameObject.FindGameObjectWithTag("Music");
@@ -64,6 +66,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         ground = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer);
+
 
         if (transform.position.x + 10 < camera1.transform.position.x)
         {
@@ -103,12 +106,15 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D col)
     {
-        // if (col.gameObject.tag == "Infra")
-        // {
-        //     ground = false;
+        //     if (col.gameObject.tag == "Barrier")
+        //     {
+        //         if (transform.position.x - camera1.transform.position.x < playerPosition)
+        //         {
+        //             transform.position.x += 3;
+        //         }
 
+        //     }
 
-        // }
 
     }
 
