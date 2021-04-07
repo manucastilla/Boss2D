@@ -11,14 +11,12 @@ public class CoinSpawner : MonoBehaviour
     public float time = 1f;
     public static float timer;
     private Vector3 screenBounds;
-    public GameObject[] objectsToSpawn;
 
     void Start()
     {
 
         if (GameObject.FindWithTag("Infra"))
         {
-            Debug.Log("oie");
             screenBounds = GameObject.FindWithTag("Infra").transform.position;
             spawnCoin();
         }
