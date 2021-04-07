@@ -146,7 +146,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 78223550}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.55, y: 0, z: 0}
+  m_LocalPosition: {x: -9.53, y: 0.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 357112152}
@@ -1012,7 +1012,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50f988fde695bf048a6e394efa1eaf92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coin: {fileID: 854086223}
+  coin: {fileID: 2946798134448320575, guid: 97de78d4c8b72fd45b88c9c7edfff0e2, type: 3}
   time: 1
 --- !u!4 &818827061
 Transform:
@@ -1028,12 +1028,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &854086223 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2946798134448320575, guid: 97de78d4c8b72fd45b88c9c7edfff0e2,
-    type: 3}
-  m_PrefabInstance: {fileID: 2946798134209025179}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &872494665
 GameObject:
   m_ObjectHideFlags: 0
@@ -1059,7 +1053,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 872494665}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.55, y: 0.02, z: 0}
+  m_LocalPosition: {x: 9.537, y: -0.007, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 357112152}
