@@ -17,7 +17,7 @@ public class PlayerInfo
         this.score = score;
     }
 }
-public class ScoreBoard : MonoBehaviour
+public class Scoreboard : MonoBehaviour
 {
     public InputField userName;
     public Text NAME;
