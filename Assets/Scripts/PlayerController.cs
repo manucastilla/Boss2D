@@ -21,12 +21,14 @@ public class PlayerController : MonoBehaviour
     GameManager gm;
     float playerPosition;
     float JumpVelocity;
+ 
 
     // float JumpDampening = 0.1f;
 
     void Start()
     {
         ground = true;
+        
         StartPosition = transform.position;
         playerPosition = StartPosition.x - camera1.transform.position.x;
         gm = GameManager.GetInstance();
@@ -67,7 +69,7 @@ public class PlayerController : MonoBehaviour
     {
         ground = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer);
 
-
+       
         if (transform.position.x + 10 < camera1.transform.position.x)
         {
             GameOver();
@@ -78,7 +80,7 @@ public class PlayerController : MonoBehaviour
         {
             GameOver();
         }
-
+        
         if (Input.GetKeyDown("space"))
         {
             if (ground)
@@ -118,16 +120,18 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter2D(Collision2D col)
+    private void OnTriggerEnter2D(Collider2D col)
     {
         // if (col.gameObject.tag == "Infra")
         // {
         //     ground = true;
 
         // }
-        if (col.gameObject.tag == "Spike")
+        if (col.gameObject.CompareTag("Spike"))
         {
+            
             GameOver();
+            
         }
 
     }
