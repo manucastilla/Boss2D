@@ -1,5 +1,4 @@
 # Boss2D
-# Boss2D
 
 ---
 ## Identidade do jogo (Conceito)
@@ -29,7 +28,7 @@ A interface é simples, mostrando o cronômetro e os pontos já conquistados. Ú
 A dificuldade do jogo é quando o jogador não consegue ultrapassar as barreiras, sua posição fica um pouco para atrás dificuldando mais ultrapassar os obstáculos.
 
 ## Fluxo de jogo
-![Fluxo do jogo](fluxoJogo.png)
+Tela de início -> tela do jogo -> tela do fim
 
 ## Personagens
 
