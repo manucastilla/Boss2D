@@ -24,11 +24,13 @@ public class Scoreboard : MonoBehaviour
     public Text RANKING;
     public Text SCORE;
     List<PlayerInfo> collectedStats;
+    private bool submitted;
 
     GameManager gm;
     // Start is called before the first frame update
     void Start()
     {
+        submitted = false;
         gm = GameManager.GetInstance();
         collectedStats = new List<PlayerInfo>();
         LoadLeaderBoard();
@@ -36,6 +38,7 @@ public class Scoreboard : MonoBehaviour
 
     public void SubmitButton()
     {
+        if (!submitted) {
         // PlayerInfo stats = new PlayerInfo(userName.text, int.Parse(score.text));
         PlayerInfo stats = new PlayerInfo(userName.text, gm.points);
         //Add The New Player Info To The List
@@ -46,6 +49,8 @@ public class Scoreboard : MonoBehaviour
 
         //Start Sorting Method To Place Object In Correct Index Of List
         SortStats();
+        submitted = true;
+        }
     }
 
     // Update is called once per frame
@@ -109,7 +114,6 @@ public class Scoreboard : MonoBehaviour
             NAME.text += collectedStats[i].name + "\n";
             SCORE.text += collectedStats[i].score + "\n";
             RANKING.text += (i + 1) + "\n";
-            print(i);
         }
     }
 

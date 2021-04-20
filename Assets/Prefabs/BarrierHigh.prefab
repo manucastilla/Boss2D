@@ -10,11 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5172919708848284388}
   - component: {fileID: 3623877263281278339}
-  - component: {fileID: 817879189}
   - component: {fileID: 817879191}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BarrierHigh
-  m_TagString: Barrier
+  m_TagString: Infra
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83,27 +82,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &817879189
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4147043492612644622}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!61 &817879191
 BoxCollider2D:
   m_ObjectHideFlags: 0

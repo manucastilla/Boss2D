@@ -7,11 +7,11 @@ public class Clock : MonoBehaviour
     Text textComp;
     GameManager gm;
     private static float timer;
-    private static float deltatimer;
+    private float deltatimer;
     // Start is called before the first frame update
     void Start()
     {
-        deltatimer = 0.0f;
+        deltatimer = Time.time;
         gm = GameManager.GetInstance();
         timer = 0;
         textComp = GetComponent<Text>();
@@ -26,7 +26,8 @@ public class Clock : MonoBehaviour
         string clockTime = string.Format("{0:00}:{1:00}", minutes, seconds);
         textComp.text = $"Time: {clockTime}";
 
-        
+        Debug.Log("Time");
+        Debug.Log(deltatimer);
         if (Time.time - deltatimer > 4.0)
         {
             gm.points += 2;
