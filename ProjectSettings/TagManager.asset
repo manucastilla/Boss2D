@@ -9,6 +9,7 @@ TagManager:
   - Music
   - Coin
   - Barrier
+  - BarrierPlat
   layers:
   - Default
   - TransparentFX

@@ -26,8 +26,7 @@ public class Clock : MonoBehaviour
         string clockTime = string.Format("{0:00}:{1:00}", minutes, seconds);
         textComp.text = $"Time: {clockTime}";
 
-        Debug.Log("Time");
-        Debug.Log(deltatimer);
+
         if (Time.time - deltatimer > 4.0)
         {
             gm.points += 2;

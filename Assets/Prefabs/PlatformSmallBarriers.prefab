@@ -145,32 +145,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5500898935273218359}
     m_Modifications:
-    - target: {fileID: 817879191, guid: 079a4726278749b46bc46da4bc755129, type: 3}
-      propertyPath: m_Size.x
-      value: 1.2568893
-      objectReference: {fileID: 0}
-    - target: {fileID: 817879191, guid: 079a4726278749b46bc46da4bc755129, type: 3}
-      propertyPath: m_Size.y
-      value: 1.1329012
-      objectReference: {fileID: 0}
-    - target: {fileID: 817879191, guid: 079a4726278749b46bc46da4bc755129, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.066450596
-      objectReference: {fileID: 0}
     - target: {fileID: 4147043492612644622, guid: 079a4726278749b46bc46da4bc755129,
         type: 3}
       propertyPath: m_Name
       value: BarrierHigh
-      objectReference: {fileID: 0}
-    - target: {fileID: 4147043492612644622, guid: 079a4726278749b46bc46da4bc755129,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4147043492612644622, guid: 079a4726278749b46bc46da4bc755129,
-        type: 3}
-      propertyPath: m_TagString
-      value: Infra
       objectReference: {fileID: 0}
     - target: {fileID: 5172919708848284388, guid: 079a4726278749b46bc46da4bc755129,
         type: 3}
@@ -227,8 +205,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 817879189, guid: 079a4726278749b46bc46da4bc755129, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 079a4726278749b46bc46da4bc755129, type: 3}
 --- !u!4 &7710349707247002956 stripped
 Transform:
@@ -723,36 +700,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5500898935273218359}
     m_Modifications:
-    - target: {fileID: 1056930804, guid: 06433d78afeb1fa488242059b4059fac, type: 3}
-      propertyPath: m_Size.x
-      value: 1.2247771
-      objectReference: {fileID: 0}
-    - target: {fileID: 1056930804, guid: 06433d78afeb1fa488242059b4059fac, type: 3}
-      propertyPath: m_Size.y
-      value: 1.137291
-      objectReference: {fileID: 0}
-    - target: {fileID: 1056930804, guid: 06433d78afeb1fa488242059b4059fac, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.016055644
-      objectReference: {fileID: 0}
-    - target: {fileID: 1056930804, guid: 06433d78afeb1fa488242059b4059fac, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.06864548
-      objectReference: {fileID: 0}
     - target: {fileID: 4147043492612644622, guid: 06433d78afeb1fa488242059b4059fac,
         type: 3}
       propertyPath: m_Name
       value: BarrierLow
-      objectReference: {fileID: 0}
-    - target: {fileID: 4147043492612644622, guid: 06433d78afeb1fa488242059b4059fac,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4147043492612644622, guid: 06433d78afeb1fa488242059b4059fac,
-        type: 3}
-      propertyPath: m_TagString
-      value: Infra
       objectReference: {fileID: 0}
     - target: {fileID: 5172919708848284388, guid: 06433d78afeb1fa488242059b4059fac,
         type: 3}
@@ -809,8 +760,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1056930802, guid: 06433d78afeb1fa488242059b4059fac, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06433d78afeb1fa488242059b4059fac, type: 3}
 --- !u!4 &837380904031606115 stripped
 Transform:
@@ -1071,36 +1021,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5500898935273218359}
     m_Modifications:
-    - target: {fileID: 1056930804, guid: 06433d78afeb1fa488242059b4059fac, type: 3}
-      propertyPath: m_Size.x
-      value: 1.2247771
-      objectReference: {fileID: 0}
-    - target: {fileID: 1056930804, guid: 06433d78afeb1fa488242059b4059fac, type: 3}
-      propertyPath: m_Size.y
-      value: 1.1372901
-      objectReference: {fileID: 0}
-    - target: {fileID: 1056930804, guid: 06433d78afeb1fa488242059b4059fac, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.01605624
-      objectReference: {fileID: 0}
-    - target: {fileID: 1056930804, guid: 06433d78afeb1fa488242059b4059fac, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.06864506
-      objectReference: {fileID: 0}
     - target: {fileID: 4147043492612644622, guid: 06433d78afeb1fa488242059b4059fac,
         type: 3}
       propertyPath: m_Name
       value: BarrierLow (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4147043492612644622, guid: 06433d78afeb1fa488242059b4059fac,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4147043492612644622, guid: 06433d78afeb1fa488242059b4059fac,
-        type: 3}
-      propertyPath: m_TagString
-      value: Infra
       objectReference: {fileID: 0}
     - target: {fileID: 5172919708848284388, guid: 06433d78afeb1fa488242059b4059fac,
         type: 3}
@@ -1157,8 +1081,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1056930802, guid: 06433d78afeb1fa488242059b4059fac, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06433d78afeb1fa488242059b4059fac, type: 3}
 --- !u!4 &837380903194239427 stripped
 Transform:
