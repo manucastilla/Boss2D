@@ -10,6 +10,7 @@ TagManager:
   - Coin
   - Barrier
   - BarrierPlat
+  - Portal
   layers:
   - Default
   - TransparentFX

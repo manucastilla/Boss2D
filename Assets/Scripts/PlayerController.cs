@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     public bool ground;
     public Vector3 StartPosition;
     public Camera camera1;
-
+    public GameObject coin;
     public Transform groundCheck;
     public float checkRadius;
 
@@ -21,23 +21,28 @@ public class PlayerController : MonoBehaviour
     GameManager gm;
     float playerPosition;
     float JumpVelocity;
- 
 
-    // float JumpDampening = 0.1f;
+    public static bool portal;
+    SpriteRenderer sprite;
 
     void Start()
     {
+        portal = false;
         ground = true;
-        
+
         StartPosition = transform.position;
         playerPosition = StartPosition.x - camera1.transform.position.x;
         gm = GameManager.GetInstance();
+
+        sprite = GetComponent<SpriteRenderer>();
 
         GameObject music = GameObject.FindGameObjectWithTag("Music");
         if (music)
         {
             GameObject.FindGameObjectWithTag("Music").GetComponent<Music>().PlayMusic();
         }
+
+
     }
 
     void FixedUpdate()
@@ -49,18 +54,6 @@ public class PlayerController : MonoBehaviour
         //jump alternativo
         Vector3 pos = transform.position;
 
-        // if (JumpVelocity != 0)
-        // {
-        //     pos.y += JumpVelocity;
-        //     JumpVelocity -= JumpDampening;
-        //     if (JumpVelocity <= 0)
-        //     {
-        //         rb.gravityScale = 5.0f;
-        //         JumpVelocity = 0;
-        //     }
-        // }
-
-        // transform.position = pos;
     }
 
 
@@ -69,7 +62,7 @@ public class PlayerController : MonoBehaviour
     {
         ground = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer);
 
-       
+
         if (transform.position.x + 10 < camera1.transform.position.x)
         {
             GameOver();
@@ -80,7 +73,7 @@ public class PlayerController : MonoBehaviour
         {
             GameOver();
         }
-        
+
         if (Input.GetKeyDown("space"))
         {
             if (ground)
@@ -93,6 +86,18 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    IEnumerator Colour()
+    {
+        for (var n = 0; n < 100; n++)
+        {
+            sprite.material.color = Color.white;
+            yield return new WaitForSeconds(.1f);
+            sprite.material.color = Color.green;
+            yield return new WaitForSeconds(.1f);
+        }
+        sprite.material.color = Color.white;
+    }
+
     public void GameOver()
     {
         SceneManager.LoadScene("EndMenu");
@@ -100,50 +105,31 @@ public class PlayerController : MonoBehaviour
 
     public void jump()
     {
-        // rb.AddForce(Vector3.up * jumpSpeed, ForceMode2D.Force);
         rb.AddForce(Vector2.up * jumpSpeed);
-        // JumpVelocity = 0.6f;
-        // rb.gravityScale = 0.0f;
     }
 
-    private void OnCollisionExit2D(Collision2D col)
-    {
-        //     if (col.gameObject.tag == "Barrier")
-        //     {
-        //         if (transform.position.x - camera1.transform.position.x < playerPosition)
-        //         {
-        //             transform.position.x += 3;
-        //         }
 
-        //     }
-
-
-    }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        // if (col.gameObject.tag == "Infra")
-        // {
-        //     ground = true;
-
-        // }
         if (col.gameObject.CompareTag("Spike"))
         {
-            
+
             GameOver();
-            
+
+        }
+
+        if (col.gameObject.CompareTag("Portal"))
+        {
+            portal = !portal;
+            if (portal)
+            {
+                StartCoroutine(Colour());
+            }
+
         }
 
     }
-
-    // private void OnTriggerEnter2D(Collider2D col)
-    // {
-    //     if (col.gameObject.CompareTag("Coin"))
-    //     {
-    //         gm.points += 10;
-
-    //     }
-    // }
 
 
 }

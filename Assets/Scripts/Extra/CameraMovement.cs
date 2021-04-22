@@ -3,6 +3,7 @@ public class CameraMovement : MonoBehaviour
 {
     private float movingSpeed = 0.2f;
 
+
     void LateUpdate()
     {
 
