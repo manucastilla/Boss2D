@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     public AudioClip jumpSFX;
+    public AudioClip portalSFX;
     private float speed = 0.17f;
     public float jumpSpeed = 1000;
     public Rigidbody2D rb;
@@ -31,7 +32,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-       
+
         portal = false;
         ground = true;
 
@@ -67,7 +68,8 @@ public class PlayerController : MonoBehaviour
     {
         ground = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer);
 
-        if(portal) {
+        if (portal)
+        {
             speed = 0.2f;
         }
 
@@ -130,12 +132,15 @@ public class PlayerController : MonoBehaviour
 
         if (col.gameObject.CompareTag("Portal"))
         {
+            AudioManager.PlaySFX(portalSFX);
             portal = !portal;
             if (portal)
             {
                 co = StartCoroutine(Colour());
                 Destroy(Instantiate(warningPower, transform.position, Quaternion.identity), 2);
-            } else {
+            }
+            else
+            {
                 StopCoroutine(co); // stop the coroutine
                 speed = 0.17f;
                 sprite.material.color = Color.white;

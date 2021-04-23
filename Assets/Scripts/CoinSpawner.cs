@@ -19,10 +19,8 @@ public class CoinSpawner : MonoBehaviour
     private float speed = 0.17f;
     private GameObject coinObject;
     Coroutine co;
-    private bool coStarted;
     void Start()
     {
-        coStarted = false;
         checkRadius = 1.3f;
 
         if (GameObject.FindWithTag("Infra"))
@@ -37,7 +35,7 @@ public class CoinSpawner : MonoBehaviour
         screenBounds = transform.position;
         timer += Time.deltaTime;
         int seconds = Mathf.FloorToInt(timer);
-        
+
         if (timer > 3)
         {
             spawnCoin();
@@ -45,7 +43,7 @@ public class CoinSpawner : MonoBehaviour
         }
     }
 
-    
+
     // IEnumerator Colour()
     // {
     //     for (var n = 0; n < 100; n++)
@@ -68,25 +66,30 @@ public class CoinSpawner : MonoBehaviour
 
     void FixedUpdate()
     {
-        coinObject= GameObject.FindWithTag("Coin");
+        coinObject = GameObject.FindWithTag("Coin");
 
-//Coroutine for blinking (maybe at Coin.cs)
+        //Coroutine for blinking (maybe at Coin.cs)
 
         if (PlayerController.portal)
         {
             // co = StartCoroutine(Colour());
             // coStarted = true;
             speed = 0.2f;
-            if (coinObject){
-                coinObject.GetComponent<SpriteRenderer>().material.color = new Color(140, 0, 211, 0.7f);
+            if (coinObject)
+            {
+                // coinObject.GetComponent<SpriteRenderer>().material.color = new Color(140, 0, 211, 0.7f);
+                coinObject.GetComponent<SpriteRenderer>().material.color = Color.green;
             }
 
-        } else {
+        }
+        else
+        {
             // if (coStarted){
             //     StopCoroutine(co); // stop the coroutine
             // }
             speed = 0.17f;
-            if (coinObject){
+            if (coinObject)
+            {
                 coinObject.GetComponent<SpriteRenderer>().material.color = Color.white;
             }
 

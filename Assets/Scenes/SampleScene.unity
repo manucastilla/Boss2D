@@ -1796,7 +1796,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0cee4fe51a6b4c640af3941b9d3e0fa6, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.659
+  m_Volume: 0.192
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2032,6 +2032,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1867271882913264634, guid: 725db3deb9224274bbff928043e56938,
         type: 3}
+      propertyPath: coin
+      value: 
+      objectReference: {fileID: 2946798134448320575, guid: 97de78d4c8b72fd45b88c9c7edfff0e2,
+        type: 3}
+    - target: {fileID: 1867271882913264634, guid: 725db3deb9224274bbff928043e56938,
+        type: 3}
       propertyPath: camera1
       value: 
       objectReference: {fileID: 519420031}
@@ -2040,6 +2046,11 @@ PrefabInstance:
       propertyPath: jumpSpeed
       value: 2800
       objectReference: {fileID: 0}
+    - target: {fileID: 1867271882913264634, guid: 725db3deb9224274bbff928043e56938,
+        type: 3}
+      propertyPath: portalSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 1dd346cf5a0aafd4d8648bb4fd47d27a, type: 3}
     - target: {fileID: 1867271882913264634, guid: 725db3deb9224274bbff928043e56938,
         type: 3}
       propertyPath: warningPower
