@@ -14,7 +14,12 @@ public class Coin : MonoBehaviour
     {
         AudioManager.PlaySFX(coinSFX);
         Destroy(gameObject);
-        gm.points += 10;
+        if(PlayerController.portal) {
+            gm.points += 20;
+        } else {
+            gm.points += 10;
+        }
+        
 
     }
 

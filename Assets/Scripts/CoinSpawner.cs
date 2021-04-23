@@ -17,8 +17,12 @@ public class CoinSpawner : MonoBehaviour
     private Vector3 screenBounds;
     private float checkRadius;
     private float speed = 0.17f;
+    private GameObject coinObject;
+    Coroutine co;
+    private bool coStarted;
     void Start()
     {
+        coStarted = false;
         checkRadius = 1.3f;
 
         if (GameObject.FindWithTag("Infra"))
@@ -33,44 +37,60 @@ public class CoinSpawner : MonoBehaviour
         screenBounds = transform.position;
         timer += Time.deltaTime;
         int seconds = Mathf.FloorToInt(timer);
-
-        ChangeSprite(sprite);
-        spriteR = coin.GetComponent<SpriteRenderer>();
-        StartCoroutine(Colour());
-
-        // if (PlayerController.portal)
-        // {
-        // Debug.Log("oie");
-        // StartCoroutine(Colour());
-        // }
+        
         if (timer > 3)
         {
             spawnCoin();
             timer = 0;
         }
-
-
     }
 
-    void ChangeSprite(Sprite coinSprite)
-    {
-        coin.GetComponent<SpriteRenderer>().sprite = coinSprite;
-    }
-    IEnumerator Colour()
-    {
-        for (var n = 0; n < 100; n++)
-        {
-            spriteR.material.color = Color.white;
-            yield return new WaitForSeconds(.1f);
-            // spriteR.material.color = new Color(173, 216, 230, 0.7f);
-            spriteR.material.color = Color.red;
-            yield return new WaitForSeconds(.1f);
-        }
-        spriteR.material.color = Color.white;
-    }
+    
+    // IEnumerator Colour()
+    // {
+    //     for (var n = 0; n < 100; n++)
+    //     {
+    //         Debug.Log("pritei");
+    //         Debug.Log(n);
+    //         if(coinObject) {
+    //         coinObject.GetComponent<SpriteRenderer>().material.color = Color.white;
+    //         yield return new WaitForSeconds(.9f);
+    //         }
+    //         if (coinObject){
+    //         coinObject.GetComponent<SpriteRenderer>().material.color = new Color(140, 0, 211, 0.7f);;
+    //         yield return new WaitForSeconds(.9f);
+    //         }
+    //     }
+    //     if (coinObject) {
+    //     coinObject.GetComponent<SpriteRenderer>().material.color = Color.white;
+    //     }
+    // }
 
     void FixedUpdate()
     {
+        coinObject= GameObject.FindWithTag("Coin");
+
+//Coroutine for blinking (maybe at Coin.cs)
+
+        if (PlayerController.portal)
+        {
+            // co = StartCoroutine(Colour());
+            // coStarted = true;
+            speed = 0.2f;
+            if (coinObject){
+                coinObject.GetComponent<SpriteRenderer>().material.color = new Color(140, 0, 211, 0.7f);
+            }
+
+        } else {
+            // if (coStarted){
+            //     StopCoroutine(co); // stop the coroutine
+            // }
+            speed = 0.17f;
+            if (coinObject){
+                coinObject.GetComponent<SpriteRenderer>().material.color = Color.white;
+            }
+
+        }
         //transform.Translate(Vector2.right * (Time.deltaTime * speed));
         transform.localPosition += new Vector3(speed, 0, 0);
     }
