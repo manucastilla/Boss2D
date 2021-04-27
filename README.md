@@ -5,7 +5,7 @@
 O jogador controla o personagem BoB e precisa correr o mais longe possível sem morrer. Ele pode morrer caindo em um buraco, batendo em espinhos ou ficando para trás ao bater em alguma estrutura. Ele nunca para de andar e o único movimento possível é pular para desviar dos obstáculos.
 
 ## Descrição da mecânica (Core Mechanics / System design)
-Jogo de plataforma com side scroller envolvendo estruturas que dificultam a passagem do jogador.
+Jogo de plataforma procedural com side scroller envolvendo estruturas que dificultam a passagem do jogador.
 
 ## Arte
 O jogo é 2D com os desenhos sendo todos de animação, com visual simples. Utilizamos artes simples demostrando que é um jogo fácil de jogar e para todas as idades. Além disso, ao utilizar desenhos de animação, a mecânica fica mais simples.
